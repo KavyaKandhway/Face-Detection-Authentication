@@ -74,8 +74,8 @@ class _AuthActionButtonState extends State<AuthActionButton> {
     }
   }
 
-  Future<String> _predictUser() async {
-    String userAndPass = await _faceNetService.predict();
+  String _predictUser() {
+    String userAndPass =  _faceNetService.predict();
     return userAndPass ?? null;
   }
 
