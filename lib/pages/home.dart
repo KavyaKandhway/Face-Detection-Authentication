@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // start the services
     await _faceNetService.loadModel();
-    // await _dataBaseService.loadDB();
+    await _dataBaseService.loadDB();
     _mlVisionService.initialize();
 
     _setLoading(false);
