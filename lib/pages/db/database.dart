@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 
 class DataBaseService {
   // singleton boilerplate
@@ -32,8 +34,6 @@ class DataBaseService {
     }
   }
 
-  /// [Name]: name of the new user
-  /// [Data]: Face representation for Machine Learning model
   Future saveData(String user, String password, List modelData) async {
     String userAndPass = user + ':' + password;
     _db[userAndPass] = modelData;
@@ -46,3 +46,34 @@ class DataBaseService {
     jsonFile.writeAsStringSync(json.encode({}));
   }
 }
+//
+// class CloudService {
+//   FirebaseFirestore firestore = FirebaseFirestore.instance;
+//   CollectionReference faces = FirebaseFirestore.instance.collection('face');
+//   Future<void> saveData(String name, String password, List<dynamic> output) {
+//     List<Map> mapOutput = [];
+//     output.forEach((dynamic output) {
+//       Map out = output.toMap();
+//       mapOutput.add(out);
+//     });
+//
+//     // Call the user's CollectionReference to add a new user
+//     return faces
+//         .add({
+//           'name': name, // John Doe
+//           'output': mapOutput, // Stokes and Sons
+//           'password': password // 42
+//         })
+//         .then((value) => print("User Added"))
+//         .catchError((error) => print("Failed to add user: $error"));
+//   }
+//
+//   Future<List> listAllUser() async {
+//     QuerySnapshot querySnapshot =
+//         await FirebaseFirestore.instance.collection("collection").get();
+//     var list = querySnapshot.docs;
+//     print("size of data");
+//     print(list.length);
+//     return list;
+//   }
+// }

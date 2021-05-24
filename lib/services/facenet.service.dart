@@ -6,6 +6,9 @@ import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tflite;
 import 'package:image/image.dart' as imglib;
 
+import '../pages/db/database.dart';
+import '../pages/db/database.dart';
+
 class FaceNetService {
   // singleton boilerplate
   static final FaceNetService _faceNetService = FaceNetService._internal();
@@ -17,10 +20,10 @@ class FaceNetService {
   FaceNetService._internal();
 
   DataBaseService _dataBaseService = DataBaseService();
-
+  // CloudService _cloudService = CloudService();
   tflite.Interpreter _interpreter;
 
-  double threshold = 1.0;
+  double threshold = 0.5;
 
   List _predictedData;
   List get predictedData => this._predictedData;
@@ -54,11 +57,11 @@ class FaceNetService {
     /// crops the face from the image and transforms it to an array of data
     List input = _preProcess(cameraImage, face);
 
-    /// then reshapes input and ouput to model format 🧑‍🔧
+    /// then reshapes input and ouput to model format
     input = input.reshape([1, 112, 112, 3]);
     List output = List.generate(1, (index) => List.filled(192, 0));
 
-    /// runs and transforms the data 🤖
+    /// runs and transforms the data
     this._interpreter.run(input, output);
     output = output.reshape([192]);
 

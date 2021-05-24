@@ -7,6 +7,7 @@ import 'package:face_net_authentication/pages/widgets/app_button.dart';
 import 'package:face_net_authentication/services/camera.service.dart';
 import 'package:face_net_authentication/services/facenet.service.dart';
 import 'package:flutter/material.dart';
+import '../db/database.dart';
 import '../home.dart';
 import 'app_text_field.dart';
 
@@ -25,6 +26,7 @@ class _AuthActionButtonState extends State<AuthActionButton> {
   /// service injection
   final FaceNetService _faceNetService = FaceNetService();
   final DataBaseService _dataBaseService = DataBaseService();
+  // final CloudService _cloudService = CloudService();
   final CameraService _cameraService = CameraService();
 
   final TextEditingController _userTextEditingController =
@@ -72,8 +74,8 @@ class _AuthActionButtonState extends State<AuthActionButton> {
     }
   }
 
-  String _predictUser() {
-    String userAndPass = _faceNetService.predict();
+  Future<String> _predictUser() async {
+    String userAndPass = await _faceNetService.predict();
     return userAndPass ?? null;
   }
 
@@ -89,7 +91,7 @@ class _AuthActionButtonState extends State<AuthActionButton> {
 
           if (faceDetected) {
             if (widget.isLogin) {
-              var userAndPass = _predictUser();
+              var userAndPass = await _predictUser();
               if (userAndPass != null) {
                 this.predictedUser = User.fromDB(userAndPass);
               }
