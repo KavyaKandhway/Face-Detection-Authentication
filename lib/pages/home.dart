@@ -5,8 +5,6 @@ import 'package:face_net_authentication/services/facenet.service.dart';
 import 'package:face_net_authentication/services/ml_vision_service.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -22,10 +20,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   CameraDescription cameraDescription;
   bool loading = false;
-
-  String githubURL =
-      "https://github.com/MCarlomagno/FaceRecognitionAuth/tree/master";
-
   @override
   void initState() {
     super.initState();
@@ -59,10 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
       loading = value;
     });
   }
-
-  void _launchURL() async => await canLaunch(githubURL)
-      ? await launch(githubURL)
-      : throw 'Could not launch $githubURL';
 
   @override
   Widget build(BuildContext context) {
@@ -223,42 +213,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: MediaQuery.of(context).size.width * 0.8,
                           child: Divider(
                             thickness: 2,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: _launchURL,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black,
-                              boxShadow: <BoxShadow>[
-                                BoxShadow(
-                                  color: Colors.blue.withOpacity(0.1),
-                                  blurRadius: 1,
-                                  offset: Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(
-                                vertical: 14, horizontal: 16),
-                            width: MediaQuery.of(context).size.width * 0.8,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'CONTRIBUTE',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                FaIcon(
-                                  FontAwesomeIcons.github,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
                           ),
                         ),
                       ],
