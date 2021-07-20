@@ -5,10 +5,7 @@ class AppButton extends StatelessWidget {
       {this.onPressed,
       this.text,
       this.color = const Color(0xFF0F0BDB),
-      this.icon = const Icon(
-        Icons.add,
-        color: Colors.white,
-      )});
+      this.icon = const Icon(Icons.add, color: Colors.black)});
   final Function onPressed;
   final String text;
   final Icon icon;
@@ -20,7 +17,7 @@ class AppButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: color,
+          color: Colors.cyanAccent,
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: Colors.blue.withOpacity(0.1),
@@ -37,7 +34,7 @@ class AppButton extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(
               width: 10,

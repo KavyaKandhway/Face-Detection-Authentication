@@ -108,7 +108,7 @@ class _AuthActionButtonState extends State<AuthActionButton> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color(0xFF0F0BDB),
+          color: Colors.limeAccent,
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: Colors.blue.withOpacity(0.1),
@@ -126,12 +126,12 @@ class _AuthActionButtonState extends State<AuthActionButton> {
           children: [
             Text(
               'CAPTURE',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(
               width: 10,
             ),
-            Icon(Icons.camera_alt, color: Colors.white)
+            Icon(Icons.camera_alt, color: Colors.black)
           ],
         ),
       ),

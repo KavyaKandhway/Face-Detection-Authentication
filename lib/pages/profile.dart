@@ -16,7 +16,7 @@ class Profile extends StatelessWidget {
     final double mirror = math.pi;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0XFFC7FFBE),
+        backgroundColor: Colors.deepPurple.shade200,
         body: SafeArea(
           child: Container(
             child: Column(
@@ -35,13 +35,6 @@ class Profile extends StatelessWidget {
                       margin: EdgeInsets.all(20),
                       width: 50,
                       height: 50,
-                      // child: Transform(
-                      //     alignment: Alignment.center,
-                      //     child: FittedBox(
-                      //       fit: BoxFit.cover,
-                      //       child: Image.file(File(imagePath)),
-                      //     ),
-                      //     transform: Matrix4.rotationY(mirror)),
                     ),
                     Text(
                       'Hi ' + username + '!',
@@ -65,6 +58,9 @@ class Profile extends StatelessWidget {
                         );
                       },
                       child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.indigo,
+                            borderRadius: BorderRadius.circular(5)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -72,7 +68,6 @@ class Profile extends StatelessWidget {
                             style: TextStyle(color: Colors.white, fontSize: 30),
                           ),
                         ),
-                        color: Colors.indigo,
                       ),
                     ),
                   ],

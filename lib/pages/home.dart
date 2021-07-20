@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0XFFC7FFBE),
+        backgroundColor: Colors.deepPurple.shade200,
         appBar: AppBar(
           leading: Container(),
           elevation: 0,
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 20,
                             ),
                             Text(
-                              "Demo application that uses Flutter and tensorflow to implement authentication with facial recognition",
+                              "Login to continue",
                               style: TextStyle(
                                 fontSize: 16,
                               ),
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
+                                color: Colors.limeAccent,
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.blue.withOpacity(0.1),
@@ -154,12 +154,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Text(
                                     'LOGIN',
-                                    style: TextStyle(color: Color(0xFF0F0BDB)),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(Icons.login, color: Color(0xFF0F0BDB))
+                                  Icon(Icons.login, color: Colors.black)
                                 ],
                               ),
                             ),
@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Color(0xFF0F0BDB),
+                                color: Colors.cyanAccent,
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.blue.withOpacity(0.1),
@@ -199,21 +199,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Text(
                                     'SIGN UP',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(Icons.person_add, color: Colors.white)
+                                  Icon(Icons.person_add, color: Colors.black)
                                 ],
                               ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                            width: MediaQuery.of(context).size.width * 0.8,
-                            child: Divider(
-                              thickness: 2,
                             ),
                           ),
                         ],
