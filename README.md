@@ -1,6 +1,6 @@
 # Face-Detection-Authentication
 ## Screenshots
-<img width="180" height="350" src="https://github.com/KavyaKandhway/Face-Detection-Authentication/blob/main/assets/Screenshot_2021-07-20-19-43-04-871_com.example.face_recognition_attendance.jpg"/> <img width="180" height="350" src="https://github.com/KavyaKandhway/Face-Detection-Authentication/blob/main/assets/Screenshot_2021-07-20-19-48-14-814_com.example.face_recognition_attendance.jpg"/> <img width="180" height="350" src="https://github.com/KavyaKandhway/Face-Detection-Authentication/blob/main/assets/Screenshot_2021-07-20-19-51-42-626_com.example.face_recognition_attendance.jpg"/>
+<img width="180" height="350" src="https://github.com/KavyaKandhway/Face-Detection-Authentication/blob/main/assets/Screenshot_2021-07-20-19-43-04-871_com.example.face_recognition_attendance.jpg"/> <img width="180" height="350" src="https://github.com/KavyaKandhway/Face-Detection-Authentication/blob/main/assets/Screenshot_2021-07-20-19-51-42-626_com.example.face_recognition_attendance.jpg"/>
 
 
 Face detection -- also called facial detection -- is an artificial intelligence (AI) based computer technology used to find and identify human faces in digital images. Face detection technology can be applied to various fields -- including security, biometrics, law enforcement, entertainment and personal safety -- to provide surveillance and tracking of people in real time.
